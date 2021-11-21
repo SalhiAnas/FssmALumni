@@ -21,10 +21,8 @@
             </div>
             <div>
                 <h2 id="loading-text">Fssm ALumni Network</h2>
-
-
             </div>
-            <div class="spinner-border" role="status">
+            <div class="spinner-border align-content-center" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
