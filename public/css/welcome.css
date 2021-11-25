@@ -1,6 +1,62 @@
 body {
     font-family: 'Nunito', sans-serif;
+    height: 100%;
+
 }
+
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+
+
+
 
 #loading {
     position: fixed;
@@ -36,5 +92,80 @@ body {
     bottom: 200px;
     text-align: center;
     color: #54381d;
+
+}
+
+.background{
+    background-image: url("/Assets/bg-image.jpg") ;
+    height: calc(100vh);
+    min-height: 350px;
+    background-size: cover;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+.toplayer{
+    z-index: 9999;
+
+}
+
+.carousel-item {
+    height: calc(100vh);
+    min-height: 350px;
+    /*background: no-repeat center center scroll;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+}
+
+
+.carousel-caption{
+    margin-bottom: 3%;
+
+}
+
+#carousel h1  {
+    font-family:"Nunito", "Popins", sans-serif;
+    text-shadow: 1px 1px  15px #222;
+
+
+
+}
+
+
+.carousel-caption{
+    margin-bottom: 8%;
+
+}
+.image_container {
+    text-align: center;
+    display: block;
+    z-index: 2;
+    margin-top: 100px;
+
+
+}
+
+.body_logo{
+    height: 250px;
+    width: auto;
+
+}
+/*If the screen size is 600px wide or less, set the font-size of <div> to 30px*/
+@media screen and (max-width: 700px) {
+    #carousel h1 {
+        font-size: 40px;
+    }
+}
+
+.py-4{
+    font-size: 1.1rem;
+
+}
+
+.btn-outline-light{
+    padding: 18px 40px;
+    font-size: 22px;
 
 }
