@@ -11,11 +11,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
 </head>
 <body>
     <div id="app">
@@ -72,10 +75,42 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </nav>--}}
-
+        <div id="loading">
+            <div>
+                <img id="loading-image" src="Assets/uca.png" alt="Loading..." />
+            </div>
+            <div>
+                <h2 id="loading-text">Fssm ALumni Network</h2>
+            </div>
+            <div class="spinner-border align-content-center" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
         <main >
             @yield('content')
         </main>
     </div>
 </body>
+
+<script>
+    $(window).load(function() {
+        setTimeout(removeLoader,2000);
+    });
+    function removeLoader() {
+        $("#loading").fadeOut(500, function () {
+            // fadeOut complete. Remove the loading div
+            $('.navbar').removeClass('invisible');
+            $("#loading").remove(); //makes page more lightweight
+            $(function () {
+                $(window).on('scroll', function () {
+                    if ( $(window).scrollTop() > 10 ) {
+                        $('.navbar').addClass('active');
+                    } else {
+                        $('.navbar').removeClass('active');
+                    }
+                });
+            });
+        });
+    }
+</script>
 </html>
