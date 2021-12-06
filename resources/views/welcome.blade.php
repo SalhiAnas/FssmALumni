@@ -57,7 +57,7 @@
                     <div class="carousel-caption">
                         <h1 class="display-3 title">Fssm alumni network</h1>
                         <h1 class="display-5 desc">Earn your confidence, nurture it, then help to build it in others.</h1>
-                        <a href="{{ route('form') }}"><button type="button"  class="btn btn-outline-light btn-lg">Join Us !</button></a>
+                        <a href="{{ route('register') }}"><button type="button"  class="btn btn-outline-light btn-lg">Join Us !</button></a>
                     </div>
                     </div>
 
