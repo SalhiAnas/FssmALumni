@@ -14,7 +14,8 @@
 </div>
 @include('feed.fastCheck')
 </div>
-<div class="container">
+<br />
+<div>
     @include('feed.CreatePost')
 </div>
 </div>
