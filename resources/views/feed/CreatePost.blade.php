@@ -11,12 +11,36 @@
     <hr >
     <div class="fieldPost">
         <!--Routing to Intern folder -->
-        <a href="{{ url('Intern/Create') }}" class="Job"><b style="color: black;">Internship/Job</b></a>
+        <a class="Job"><b style="color: black;">Internship/Job</b></a>
         <a class="Events"><b style="color: black;">Events</b></a>
-        <a class="stories"><b style="color: black;">Impact Stories</b></a>
+        <a class="Stories"><b style="color: black;">Impact Stories</b></a>
+    </div>
+    <br />
+    <br />
+    <div style="display:none" class="InternSteps"> 
+        @include('feed.Intern.Create')
+    </div>
+    <div style="display:none" class="EventsSteps"> 
+        @include('feed.Events.Create')
+    </div>
+    <div style="display:none" class="StoriesSteps"> 
+        @include('feed.Stories.Create')
     </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $(".Job").click(function(){
+        $(".InternSteps").show();
+        });
+        $(".Events").click(function(){
+        $(".EventsSteps").show();
+        });
+        $(".Stories").click(function(){
+        $(".StoriesSteps").show();
+        });
+    });
+</script>
 <style>
 hr {
     width:560;

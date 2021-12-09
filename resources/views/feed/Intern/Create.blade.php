@@ -1,2 +1,4 @@
-<!-- Create form to add intern post -->
-this is create
+<div>
+    <!-- create post intern wizard -->
+Intern post
+</div>
