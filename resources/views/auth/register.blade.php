@@ -50,7 +50,7 @@
             </div>
          </div>
          <div class="form-outer">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                @csrf
                <div class="page slide-page">
                   <div class="title">
@@ -138,6 +138,17 @@
                         <option>Other</option>
                      </select>
                   </div>
+                  <div class="field">
+                     <div class="label">
+                        Profile Picture (Optional):
+                     </div>
+                     <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" autocomplete="photo">
+                     @error('photo')
+                        <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                        </span>
+                     @enderror
+                  </div>
                   <div class="field btns">
                      <button class="prev-2 prev">Previous</button>
                      <button class="next-2 next">Next</button>
@@ -162,6 +173,17 @@
                      </div>
                      <input id="cin" type="text" class="form-control @error('cin') is-invalid @enderror" name="cin" value="{{ old('cin') }}" required autocomplete="cin">
                      @error('cin')
+                        <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                        </span>
+                     @enderror
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        More About You (Optional):
+                     </div>
+                     <textarea id="more" class="form-control @error('more') is-invalid @enderror" name="more" value="{{ old('more') }}" autocomplete="more" cols="60"></textarea>
+                     @error('more')
                         <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
                         </span>
