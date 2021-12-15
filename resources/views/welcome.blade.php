@@ -43,6 +43,7 @@
                     <div class="background"></div>
                     <div class="toplayer">
                     <div class="carousel-caption">
+                        <img src="Assets/fssm_white.png">
                         <h1 class="display-3 title">Fssm alumni network</h1>
                         <h1 class="display-5 desc">Earn your confidence, nurture it, then help to build it in others.</h1>
                         <a href="#"><button type="button"  class="btn btn-outline-light btn-lg">Join Us !</button></a>
