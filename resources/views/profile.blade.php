@@ -124,7 +124,7 @@
 
                     <div class="row gutters-sm">
                         <div class="col-sm-6 mb-3">
-                            <div class="card h-100">
+                            <div class="card h-auto">
                                 <div class="card-body">
                                     <h4 class="d-flex align-items-center mb-4"> Cursus academique.</h4>
                                     <hr>
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 mb-3">
-                            <div class="card h-100">
+                            <div class="card h-auto">
                                 <div class="card-body">
                                     <h4 class="d-flex align-items-center mb-4"> Cursus professionelle. .</h4>
                                     <hr>
