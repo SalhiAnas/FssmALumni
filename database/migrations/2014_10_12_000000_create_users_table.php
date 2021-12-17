@@ -23,8 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('gender');
             $table->string('status');
             $table->string('cin');
+            $table->string('password')->nullable();
+            $table->string('request')->default('Denied');
+            $table->string('account')->default('Disabled');
             $table->string('photo')->nullable();
-            $table->string('more')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('date');
             $table->rememberToken();

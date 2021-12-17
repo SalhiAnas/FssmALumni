@@ -58,7 +58,6 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'date' => ['required', 'date'],
             'cin' => ['required', 'string', 'max:8', 'unique:users'],
-            'more' => ['string'],
         ]);
     }
 
@@ -79,13 +78,7 @@ class RegisterController extends Controller
             'date' => $data['date'],
             'status' => $data['status'],
             'gender' => $data['gender'],
-            'more' => $data['more'],
         ]);
-        if (request()->hasFile('photo')){
-            $photo = request()->file('photo')-> getClientOriginalName();
-            request()->file('photo')->storeAs('users',$user->id.'/'.$photo,'');
-            $user->update(['photo' => $photo]);
-        }
         return $user;
     }
 }
