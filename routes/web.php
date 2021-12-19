@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::view('/Event','Events.Create')->name('Event');
+Route::view('/Intern','Intern.Create')->name('Intern');
+Route::view('/Stories','Stories.Create')->name('Story');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

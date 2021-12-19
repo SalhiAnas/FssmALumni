@@ -11,36 +11,72 @@
     <hr >
     <div class="fieldPost">
         <!--Routing to Intern folder -->
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter1">
         <a class="Job"><b style="color: black;">Internship/Job</b></a>
+        </button>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter2">
         <a class="Events"><b style="color: black;">Events</b></a>
+        </button>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter3">
         <a class="Stories"><b style="color: black;">Impact Stories</b></a>
+        </button>
     </div>
     <br />
     <br />
-    <div style="display:none" class="InternSteps"> 
-        @include('feed.Intern.Create')
-    </div>
-    <div style="display:none" class="EventsSteps"> 
-        @include('feed.Events.Create')
-    </div>
-    <div style="display:none" class="StoriesSteps"> 
-        @include('feed.Stories.Create')
-    </div>
+    <div class="modal fade"  id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <center>
+                <h5 class="modal-title" id="exampleModalLongTitle">Internship Job post</h5>
+                </center>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            @include('feed.Intern.Create')
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <center>
+                <h5 class="modal-title" id="exampleModalLongTitle">Events post</h5>
+                </center>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            @include('feed.Events.Create')
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <center>
+                <h5 class="modal-title" id="exampleModalLongTitle">Story post</h5>
+                </center>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            @include('feed.Stories.Create')
+            </div>
+            </div>
+        </div>
+        </div>
+
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $(".Job").click(function(){
-        $(".InternSteps").show();
-        });
-        $(".Events").click(function(){
-        $(".EventsSteps").show();
-        });
-        $(".Stories").click(function(){
-        $(".StoriesSteps").show();
-        });
-    });
-</script>
 <style>
 hr {
     width:560;
