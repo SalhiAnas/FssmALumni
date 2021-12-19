@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('account')->default('Disabled');
             $table->string('photo')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->timestamp('date');
+            $table->timestamp('date')->default(\DB::raw('CURRENT_TIMESTAMP'));;
             $table->rememberToken();
             $table->timestamps();
         });
@@ -46,7 +46,7 @@ class CreateUsersTable extends Migration
     public function setBirthDateAttribute($value)
     {
         $this->attributes['date'] = $this->parseDate($value);
-    } 
+    }
 
     public function parseDate($date=null)
     {
