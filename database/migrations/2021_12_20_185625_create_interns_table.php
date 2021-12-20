@@ -15,6 +15,15 @@ class CreateInternsTable extends Migration
     {
         Schema::create('interns', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('company');
+            $table->string('duration');
+            $table->string('location');
+            $table->date('start_time');
+            $table->enum('job_type',['part_time','full_time','remotely']);
+            $table->longText('description');
+            $table->string('experience_skills')->nullable();
+            $table->string('education_certificates')->nullable();
             $table->timestamps();
         });
     }
