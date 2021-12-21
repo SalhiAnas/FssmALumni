@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Intern extends Controller
+class InternController extends Controller
 {
     /**
      * Display a listing of the resource.

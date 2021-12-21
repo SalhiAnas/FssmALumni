@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Event extends Controller
+class StoryController extends Controller
 {
     /**
      * Display a listing of the resource.
