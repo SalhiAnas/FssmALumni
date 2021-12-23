@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
+use App\Models\Intern;
 
 class InternController extends Controller
 {
@@ -35,7 +38,28 @@ class InternController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = \request()->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'duration' => 'required',
+            'location' => 'required',
+            'start_time' => 'required',
+            'job_type' => 'required',
+            'description' => 'required',
+            'experience_skills' => 'required',
+            'education_certificates' => 'required'
+        ]);
+        $intern = Intern::create([
+            'title' => $data['title'],
+            'company' => $data['company'],
+            'duration' => $data['duration'],
+            'location' => $data['location'],
+            'start_time' => $data['start_time'],
+            'job_type' => $data['job_type'],
+            'description' => $data['description'],
+            'experience_skills' => $data['experience_skills'],
+            'education_certificates' => $data['education_certificates']
+        ]);
     }
 
     /**

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
+use App\Models\Story;
 
 class StoryController extends Controller
 {
@@ -35,7 +38,23 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = \request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => ['required','image'],
+            'published_at' => ['required','date-format:Y-m-d']
+        ]);
+        $imagePath = 'storage/'.\request('image')->store('uploads','public');
+        $image = Image::make(public_path($imagePath))->fit(1280,720);
+        $image->save();
+        $data['title'] = ucfirst($data['title']);
+        $data['description'] = ucfirst($data['description']);
+        $story = Story::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'image' => $imagePath,
+            'published_at' => $data['published_at']
+        ]);
     }
 
     /**
