@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use App\Models\Event;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -17,7 +18,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = DB::table('Event')->select('id','title')->get();
+        //return view('feed.Events.List',compact('events'));
     }
 
     /**

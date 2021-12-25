@@ -9,7 +9,7 @@ class Intern extends Model
 {
     use HasFactory;
 
-    protected $table = "stories";
+    protected $table = 'interns';
 
     protected $fillable = ['title','company','duration','location','start_time','job_type','description','experience_skills','education_certificates'];
 }

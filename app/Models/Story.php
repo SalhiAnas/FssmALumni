@@ -9,7 +9,7 @@ class Story extends Model
 {
     use HasFactory;
 
-    protected $table = "stories";
+    protected $table = 'stories';
 
     protected $fillable = ['title','description','image','published_at'];
 

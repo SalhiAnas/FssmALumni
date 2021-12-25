@@ -24,7 +24,7 @@
     <br />
     <br />
     <div class="modal fade"  id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div  class="modal-dialog modal-dialog-centered1" role="document">
             <div class="modal-content">
             <div class="modal-header">
                 <center>
@@ -34,7 +34,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body1">
             @include('feed.Intern.Create')
             </div>
             </div>
@@ -51,7 +51,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body2">
             @include('feed.Events.Create')
             </div>
             </div>
@@ -68,13 +68,14 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body3">
             @include('feed.Stories.Create')
             </div>
             </div>
         </div>
         </div>
-
+        <br />
+        @include('feed.listing')
     </div>
 </div>
 <style>
