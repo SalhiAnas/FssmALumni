@@ -18,8 +18,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = DB::table('Event')->select('id','title')->get();
-        //return view('feed.Events.List',compact('events'));
+        $event = DB::table('events')->orderBy('id', 'DESC')->get();
+        //return view('feed.Events.List', compact('event'));
+       return $event;
     }
 
     /**

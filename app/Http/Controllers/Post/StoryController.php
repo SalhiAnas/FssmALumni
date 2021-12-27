@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use App\Models\Story;
+use Illuminate\Support\Facades\DB;
+
 
 class StoryController extends Controller
 {
@@ -17,7 +19,9 @@ class StoryController extends Controller
      */
     public function index()
     {
-        //
+        $story = DB::table('stories')->orderBy('id', 'DESC')->get();
+        //return view('feed.Stories.List', compact('event'));
+        return $story;
     }
 
     /**
