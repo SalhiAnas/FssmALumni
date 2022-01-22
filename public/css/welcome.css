@@ -56,45 +56,6 @@ body {
 }
 
 
-
-
-#loading {
-    position: fixed;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    opacity: 1;
-    background-color: #fff;
-    z-index: 99;
-}
-
-#loading-image {
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-}
-#loading-text {
-    position: absolute;
-    top: 400px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    color: #54381d;
-}
-.spinner-border
-{
-    position: absolute;
-    bottom: 200px;
-    text-align: center;
-    color: #54381d;
-
-}
-
 .background{
     background-image: url("/Assets/bg-image.jpg") ;
     height: calc(100vh);
@@ -168,4 +129,217 @@ body {
     padding: 18px 40px;
     font-size: 22px;
 
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+    overflow: hidden;
+
+
+}
+
+.section-bg {
+    background-color: #f6f8fb;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #2d405f;
+}
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #aabbd7;
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+.section-title p {
+    margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+.features{
+
+}
+.features .content + .content {
+    margin-top: 100px;
+}
+.features .content h3 {
+    font-weight: 600;
+    font-size: 26px;
+}
+.features p{
+    font-size: 18px;
+
+}
+.features .content ul {
+    list-style: none;
+    padding: 0;
+}
+.features .content ul li {
+    padding-bottom: 10px;
+}
+.features .content ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #3b4ef8;
+}
+.features .content p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# about
+--------------------------------------------------------------*/
+.about{
+    background-color: #ffffff;
+}
+.about .content + .content {
+    margin-top: 20px;
+}
+.about .content h3 {
+    font-weight: 600;
+    font-size: 26px;
+}
+.about p{
+    font-size: 15px;
+
+}
+.features .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features .content p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact{
+    height: calc(100vh - 70px);
+
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .contact{
+        height: 100%;
+
+    }
+}
+
+.contact .info-box {
+    color: #2d405f;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 20px 0 30px 0;
+    background: #fff;
+}
+.contact .info-box i {
+    font-size: 32px;
+    color: #3b4ef8;
+    padding: 8px;
+}
+.contact .info-box h3 {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.contact .php-email-form {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 30px;
+    background: #fff;
+}
+.contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+.contact .php-email-form .error-message br + br {
+    margin-top: 25px;
+}
+.contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+.contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+.contact .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input, .contact .php-email-form textarea {
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 14px;
+}
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+    border-color: #8ea5ca;
+}
+.contact .php-email-form input {
+    padding: 10px 15px;
+}
+.contact .php-email-form textarea {
+    padding: 12px 15px;
+}
+.contact .php-email-form button[type=submit] {
+    background: #3b4ef8;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+.contact .php-email-form button[type=submit]:hover {
+    background: #0a22f6;
 }
