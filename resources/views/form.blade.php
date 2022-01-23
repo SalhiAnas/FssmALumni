@@ -17,7 +17,7 @@
                   Name
                </p>
                <div class="bullet">
-                  <span>I</span>
+                  <span>1</span>
                </div>
                <div class="check fas fa-check"></div>
             </div>
@@ -26,7 +26,7 @@
                   Contact
                </p>
                <div class="bullet">
-                  <span>II</span>
+                  <span>2</span>
                </div>
                <div class="check fas fa-check"></div>
             </div>
@@ -35,7 +35,7 @@
                   Birth
                </p>
                <div class="bullet">
-                  <span>III</span>
+                  <span>3</span>
                </div>
                <div class="check fas fa-check"></div>
             </div>
@@ -44,14 +44,13 @@
                   Submit
                </p>
                <div class="bullet">
-                  <span>IV</span>
+                  <span>4</span>
                </div>
                <div class="check fas fa-check"></div>
             </div>
          </div>
          <div class="form-outer">
-            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-               @csrf
+            <form action="#">
                <div class="page slide-page">
                   <div class="title">
                      Basic Info:
@@ -60,23 +59,13 @@
                      <div class="label">
                         First Name
                      </div>
-                     <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
-                     @error('first_name')
-                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                        </span>
-                     @enderror
+                     <input type="text" id="hi">
                   </div>
                   <div class="field">
                      <div class="label">
                         Last Name
                      </div>
-                     <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
-                     @error('last_name')
-                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                        </span>
-                     @enderror
+                     <input type="text" id="hi">
                   </div>
                   <div class="field">
                      <button class="firstNext next">Next</button>
@@ -90,23 +79,13 @@
                      <div class="label">
                         Email Address
                      </div>
-                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                     @error('email')
-                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                        </span>
-                     @enderror
+                     <input type="text">
                   </div>
                   <div class="field">
                      <div class="label">
                         Phone Number
                      </div>
-                     <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
-                     @error('phone')
-                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                        </span>
-                     @enderror
+                     <input type="Number">
                   </div>
                   <div class="field btns">
                      <button class="prev-1 prev">Previous</button>
@@ -115,27 +94,31 @@
                </div>
                <div class="page">
                   <div class="title">
-                     Date of Birth & Gender:
+                     Date of Birth:
                   </div>
                   <div class="field">
                      <div class="label">
-                        Date of Birth
+                        Date
                      </div>
-                     <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date">
-                     @error('date')
-                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                        </span>
-                     @enderror
+                     <input type="date">
                   </div>
                   <div class="field">
                      <div class="label">
                         Gender
                      </div>
-                     <select id="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender">
+                     <select>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Other</option>
+                     </select>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Status
+                     </div>
+                     <select>
+                        <option>Student</option>
+                        <option>Laureat</option>
                      </select>
                   </div>
                   <div class="field btns">
@@ -145,27 +128,25 @@
                </div>
                <div class="page">
                   <div class="title">
-                     More Details:
+                     Login Details:
                   </div>
                   <div class="field">
                      <div class="label">
-                        Status
+                        Username
                      </div>
-                     <select id="status" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') }}" required autocomplete="status">
-                        <option>Student</option>
-                        <option>Laureat</option>
-                     </select>
+                     <input type="text">
                   </div>
                   <div class="field">
                      <div class="label">
-                        CIN
+                        Password
                      </div>
-                     <input id="cin" type="text" class="form-control @error('cin') is-invalid @enderror" name="cin" value="{{ old('cin') }}" required autocomplete="cin">
-                     @error('cin')
-                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                        </span>
-                     @enderror
+                     <input type="password" id="pass1">
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Confirm Password
+                     </div>
+                     <input type="password" id="pass2">
                   </div>
                   <div class="field btns">
                      <button class="prev-3 prev">Previous</button>
