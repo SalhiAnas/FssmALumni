@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\users;
 
 class ProfileController extends Controller
 {   
@@ -15,10 +16,10 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('profile');
-    }
+    /*public function index(){
+    $profile = users::latest()->get();
+    return view('profile', ['profile' => $profile]);
+    }*/
 
     /**
      * Show the form for creating a new resource.
@@ -49,7 +50,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $profile = users::findOrFail($id);
+        return view('profile', ['profile' => $profile]);
     }
 
     /**

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 </head>
-    <div class="container">
+    <div class="container" id="blur">
         <div class="main-body">
 
             <!-- Breadcrumb -->
@@ -31,9 +31,8 @@
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
-                                    <h4>John Doe</h4>
-                                    <p class="text-secondary mb-1">Full Stack Developer</p>
-                                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                    <h4>{{ $profile->first_name }} {{ $profile->last_name }}</h4>
+                                    <p class="text-secondary mb-1">{{ $profile->status }}</p>
                                     <button class="btn btn-primary">Follow</button>
                                     <button class="btn btn-outline-primary">Message</button>
                                 </div>
@@ -68,13 +67,13 @@
                 <div class="col-md-8">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h4 class="d-flex align-items-center mb-4"> Informations Generale</h4>
+                            <h4 class="d-flex align-items-center mb-4">General Information</h4>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    Kenneth Valdez
+                                    {{ $profile->first_name }} {{ $profile->last_name }}
                                 </div>
                             </div>
                             <hr>
@@ -83,7 +82,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    fip@jukmuh.al
+                                    {{ $profile->email }}
                                 </div>
                             </div>
                             <hr>
@@ -92,41 +91,31 @@
                                     <h6 class="mb-0">Phone</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    (239) 816-9029
+                                    {{ $profile->phone }}
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">CNE</h6>
+                                    <h6 class="mb-0">CIN</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    XX5698482
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Address</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    Bay Area, San Francisco, CA
+                                    {{ $profile->cin }}
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                    <a class="btn btn-info " onclick="toggle()">Edit</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="row gutters-sm">
                         <div class="col-sm-6 mb-3">
                             <div class="card h-auto">
                                 <div class="card-body">
-                                    <h4 class="d-flex align-items-center mb-4"> Cursus academique.</h4>
+                                    <h4 class="d-flex align-items-center mb-4">Academic Curriculum</h4>
                                     <hr>
                                     <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
                                     <div>
@@ -150,7 +139,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                            <a class="btn btn-info " onclick="toggle1()">Add</a>
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +148,7 @@
                         <div class="col-sm-6 mb-3">
                             <div class="card h-auto">
                                 <div class="card-body">
-                                    <h4 class="d-flex align-items-center mb-4"> Cursus professionelle. .</h4>
+                                    <h4 class="d-flex align-items-center mb-4">Professional Curriculum.</h4>
                                     <hr>
 
                                     <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
@@ -180,7 +169,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                            <a class="btn btn-info" target="__blank" onclick="toggle2()" >Add</a>
                                         </div>
                                     </div>
                                 </div>
@@ -189,8 +178,105 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    <div id="popup1">
+        <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
+    <form>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">First Name:</label>
+    <div class="col-sm-8">
+      <input class="form-control" value = {{ $profile->first_name }}>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Last Name:</label>
+    <div class="col-sm-8">
+      <input class="form-control" value = {{ $profile->last_name }}>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Phone:</label>
+    <div class="col-sm-8">
+      <input class="form-control" type="Number" value = {{ $profile->phone }}>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">CIN:</label>
+    <div class="col-sm-8">
+      <input class="form-control" value = {{ $profile->cin }}>
+    </div>
+  </div>
+  <a class="btn btn-info" target="__blank" onclick="toggle()">Done</a>
+</form>
+</div>
+<div id="popup2">
+        <h4 class="d-flex align-items-center mb-4">Academic Curriculum - Add</h4>
+    <form>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Title:</label>
+    <div class="col-sm-8">
+      <input class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Year</label>
+    <div class="col-sm-8">
+      <input type="Number" max="2022" min="1970" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Description:</label>
+    <div class="col-sm-8">
+      <textarea rows="15" cols="40"></textarea>
+    </div>
+  </div>
+  <a class="btn btn-info" target="__blank" onclick="toggle1()">Done</a>
+</form>
+</div>
+<div id="popup3">
+        <h4 class="d-flex align-items-center mb-4">Professional Curriculum - Add</h4>
+    <form>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Title:</label>
+    <div class="col-sm-8">
+      <input class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Year</label>
+    <div class="col-sm-8">
+      <input type="Number" max="2022" min="1970" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Description:</label>
+    <div class="col-sm-8">
+      <textarea rows="15" cols="40"></textarea>
+    </div>
+  </div>
+  <a class="btn btn-info" target="__blank" onclick="toggle2()">Done</a>
+</form>
+</div>
+    <script type="text/javascript">
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup1 = document.getElementById('popup1');
+            popup1.classList.toggle('active');
+        }
+        function toggle1() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup2 = document.getElementById('popup2');
+            popup2.classList.toggle('active');
+        }
+        function toggle2() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup3 = document.getElementById('popup3');
+            popup3.classList.toggle('active');
+        }
+    </script>
 </html>
 @endsection

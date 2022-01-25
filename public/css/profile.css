@@ -4,6 +4,11 @@ body{
     text-align: left;
     background-color: #e2e8f0;
 }
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
 .main-body {
     padding: 15px;
 }
@@ -24,6 +29,7 @@ body{
 }
 
 .card-body {
+    position: relative;
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
@@ -50,4 +56,24 @@ body{
 }
 .shadow-none {
     box-shadow: none!important;
+}
+#popup1,#popup2,#popup3{
+    position: fixed;
+    align-items: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup1.active,#popup2.active,#popup3.active{
+    visibility: visible;
+    top: 50%;
+    opacity: 1;
+    transition: 0.5s;
 }

@@ -24,6 +24,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-
+/*Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');*/
+Route::get('/profile/{id}',[App\Http\Controllers\ProfileController::class, 'show'])->name('profile')->middleware('auth');
 Route::get('/form', [App\Http\Controllers\RegisterController::class, 'index'])->name('form');
