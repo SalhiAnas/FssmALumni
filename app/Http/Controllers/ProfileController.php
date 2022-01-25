@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Cursus;
 
 class ProfileController extends Controller
 {   
@@ -15,9 +17,17 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('profile');
+    public function index($id = null)
+    {   
+        if(empty($id)){
+            $id = Auth()->user()->id;
+        }
+
+        $cursus_aca = User::find($id)->cursuses->where('type_cursus', 'académique');
+        $cursus_pro = User::find($id)->cursuses->where('type_cursus', 'professionnel');
+        $user=User::find($id);
+        
+        return view('profile',compact('user','cursus_pro','cursus_aca'));
     }
 
     /**
