@@ -110,7 +110,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                 @if($user->id == Auth()->user()->id)
-                                    <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                    <a class="btn btn-primary " onclick="toggle()">Edit</a>
                                 @endif
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                         @if($user->id == Auth()->user()->id)
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        <a class="btn btn-primary " onclick="toggle1()">Add</a>
                                         @endif
                                         </div>
                                     </div>
@@ -155,7 +155,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                         @if($user->id == Auth()->user()->id)
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        <a class="btn btn-primary " onclick="toggle2()">Add</a>
                                         @endif
                                         </div>
                                     </div>

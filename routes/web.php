@@ -33,3 +33,7 @@ Route::get('/form', [App\Http\Controllers\RegisterController::class, 'index'])->
 Route::get('/cursus', [App\Http\Controllers\CursusController::class, 'create'])->name('cursuscreate');
 
 Route::post('/cursus/store', [App\Http\Controllers\CursusController::class, 'store'])->name('cursusstore');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
