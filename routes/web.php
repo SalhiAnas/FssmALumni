@@ -28,12 +28,7 @@ Route::get('/profile/{id}', [App\Http\Controllers\ProfileController::class, 'ind
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
-Route::get('/form', [App\Http\Controllers\RegisterController::class, 'index'])->name('form');
-
 Route::get('/cursus', [App\Http\Controllers\CursusController::class, 'create'])->name('cursuscreate');
 
 Route::post('/cursus/store', [App\Http\Controllers\CursusController::class, 'store'])->name('cursusstore');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
