@@ -31,12 +31,6 @@
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
-<<<<<<< HEAD
-                                    <h4>{{ $profile->first_name }} {{ $profile->last_name }}</h4>
-                                    <p class="text-secondary mb-1">{{ $profile->status }}</p>
-                                    <button class="btn btn-primary">Follow</button>
-                                    <button class="btn btn-primary">Message</button>
-=======
                                     <h4>{{$user->last_name}} {{ $user->first_name}}</h4>
                                     <p class="text-secondary mb-1">Full Stack Developer</p>
                                     <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
@@ -44,7 +38,6 @@
                                     <button class="btn btn-primary">Follow</button>
                                     <button class="btn btn-outline-primary">Message</button>
                                     @endif
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                 </div>
                             </div>
                         </div>
@@ -83,11 +76,7 @@
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-<<<<<<< HEAD
-                                    {{ $profile->first_name }} {{ $profile->last_name }}
-=======
-                                {{$user->last_name}} {{ $user->first_name}}
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
+                                    {{ $user->first_name }} {{ $user->last_name }}
                                 </div>
                             </div>
                             <hr>
@@ -96,7 +85,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {{ $profile->email }}
+                                    {{ $user->email }}
                                 </div>
                             </div>
                             <hr>
@@ -105,7 +94,7 @@
                                     <h6 class="mb-0">Phone</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {{ $profile->phone }}
+                                    {{ $user->phone }}
                                 </div>
                             </div>
                             <hr>
@@ -114,19 +103,15 @@
                                     <h6 class="mb-0">CIN</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {{ $profile->cin }}
+                                    {{ $user->cin }}
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
-<<<<<<< HEAD
-                                    <a class="btn btn-primary " onclick="toggle()">Edit</a>
-=======
                                 @if($user->id == Auth()->user()->id)
                                     <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                                 @endif
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                 </div>
                             </div>
                         </div>
@@ -148,13 +133,9 @@
                                     @endif
                                     <div class="row">
                                         <div class="col-sm-12">
-<<<<<<< HEAD
-                                            <a class="btn btn-primary " onclick="toggle1()">Add</a>
-=======
                                         @if($user->id == Auth()->user()->id)
                                             <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                                         @endif
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                         </div>
                                     </div>
                                 </div>
@@ -173,13 +154,9 @@
                                     @endforeach
                                     <div class="row">
                                         <div class="col-sm-12">
-<<<<<<< HEAD
-                                            <a class="btn btn-primary" target="__blank" onclick="toggle2()" >Add</a>
-=======
                                         @if($user->id == Auth()->user()->id)
                                             <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                                         @endif
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                         </div>
                                     </div>
                                 </div>
@@ -190,32 +167,31 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <div id="popup1">
         <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
     <form>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">First Name:</label>
     <div class="col-sm-8">
-      <input class="form-control" value = {{ $profile->first_name }}>
+      <input class="form-control" value = {{ $user->first_name }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Last Name:</label>
     <div class="col-sm-8">
-      <input class="form-control" value = {{ $profile->last_name }}>
+      <input class="form-control" value = {{ $user->last_name }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Phone:</label>
     <div class="col-sm-8">
-      <input class="form-control" type="Number" value = {{ $profile->phone }}>
+      <input class="form-control" type="Number" value = {{ $user->phone }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">CIN:</label>
     <div class="col-sm-8">
-      <input class="form-control" value = {{ $profile->cin }}>
+      <input class="form-control" value = {{ $user->cin }}>
     </div>
   </div>
   <a class="btn btn-primary" target="__blank" onclick="toggle()">Done</a>
@@ -289,9 +265,5 @@
             popup3.classList.toggle('active');
         }
     </script>
-=======
-
-
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
 </html>
 @endsection
