@@ -15,17 +15,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-        	'first_name' => "Mohamed",
-        	'last_name' => 'Nicer',
-        	'email' => 'fssm@alumni.com',
-        	'phone' => '0606060606',
-        	'gender' => 'Male',
-        	'cin' => 'EE000000',
-        	'date' => '2000-01-01 00:00:00',
+        	'first_name' => "Amal",
+        	'last_name' => 'Ait',
+        	'email' => 'amal@gmail.com',
+        	'phone' => '0607060606',
+        	'gender' => 'Female',
+        	'cin' => 'YE000000',
+        	'date' => '2000-02-01 00:00:00',
         	'status' => 'Admin',
         	'request' => 'Accepted',
         	'account' => 'Enabled',
-        	'password' => bcrypt('secret'),
+        	'password' => bcrypt('amalamoula'),
         ]);
+		
     }
 }

@@ -31,10 +31,20 @@
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
+<<<<<<< HEAD
                                     <h4>{{ $profile->first_name }} {{ $profile->last_name }}</h4>
                                     <p class="text-secondary mb-1">{{ $profile->status }}</p>
                                     <button class="btn btn-primary">Follow</button>
                                     <button class="btn btn-primary">Message</button>
+=======
+                                    <h4>{{$user->last_name}} {{ $user->first_name}}</h4>
+                                    <p class="text-secondary mb-1">Full Stack Developer</p>
+                                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                    @if($user->id != Auth()->user()->id)
+                                    <button class="btn btn-primary">Follow</button>
+                                    <button class="btn btn-outline-primary">Message</button>
+                                    @endif
+>>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                 </div>
                             </div>
                         </div>
@@ -73,7 +83,11 @@
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
+<<<<<<< HEAD
                                     {{ $profile->first_name }} {{ $profile->last_name }}
+=======
+                                {{$user->last_name}} {{ $user->first_name}}
+>>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                 </div>
                             </div>
                             <hr>
@@ -106,7 +120,13 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
+<<<<<<< HEAD
                                     <a class="btn btn-primary " onclick="toggle()">Edit</a>
+=======
+                                @if($user->id == Auth()->user()->id)
+                                    <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                @endif
+>>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                 </div>
                             </div>
                         </div>
@@ -117,29 +137,24 @@
                                 <div class="card-body">
                                     <h4 class="d-flex align-items-center mb-4">Academic Curriculum</h4>
                                     <hr>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
+                                    
+                                    @if(isset($cursus_aca))
+                                        @foreach($cursus_aca as $cursus)
+                                            <div><small>{{$cursus->année}}</small> - <b>{{$cursus->titre_cursus}}</b> <h6 class="d-flex ml-3"></h6></div>
+                                            <div>
+                                                <p>{{$cursus->description}}</p>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                     <div class="row">
                                         <div class="col-sm-12">
+<<<<<<< HEAD
                                             <a class="btn btn-primary " onclick="toggle1()">Add</a>
+=======
+                                        @if($user->id == Auth()->user()->id)
+                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        @endif
+>>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                         </div>
                                     </div>
                                 </div>
@@ -150,26 +165,21 @@
                                 <div class="card-body">
                                     <h4 class="d-flex align-items-center mb-4">Professional Curriculum.</h4>
                                     <hr>
-
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
+                                    @foreach($cursus_pro as $cursus)
+                                    <div><small>{{$cursus->année}}</small> - <b>{{$cursus->titre_cursus}}</b> <h6 class="d-flex ml-3"></h6></div>
                                     <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
+                                        <p>{{$cursus->description}}</p>
                                     </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
-                                    <div><small>2014</small> - <b>text text text</b> <h6 class="d-flex ml-3"></h6></div>
-                                    <div>
-                                        <p>Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique Cursus académique</p>
-                                    </div>
+                                    @endforeach
                                     <div class="row">
                                         <div class="col-sm-12">
+<<<<<<< HEAD
                                             <a class="btn btn-primary" target="__blank" onclick="toggle2()" >Add</a>
+=======
+                                        @if($user->id == Auth()->user()->id)
+                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        @endif
+>>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
                                         </div>
                                     </div>
                                 </div>
@@ -180,6 +190,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div id="popup1">
         <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
     <form>
@@ -278,5 +289,9 @@
             popup3.classList.toggle('active');
         }
     </script>
+=======
+
+
+>>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
 </html>
 @endsection
