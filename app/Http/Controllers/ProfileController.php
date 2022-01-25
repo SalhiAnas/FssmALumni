@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-use App\users;
-=======
 use App\Models\User;
 use App\Models\Cursus;
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
 
 class ProfileController extends Controller
 {   
@@ -21,12 +17,6 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    /*public function index(){
-    $profile = users::latest()->get();
-    return view('profile', ['profile' => $profile]);
-    }*/
-=======
     public function index($id = null)
     {   
         if(empty($id)){
@@ -39,7 +29,6 @@ class ProfileController extends Controller
         
         return view('profile',compact('user','cursus_pro','cursus_aca'));
     }
->>>>>>> 7b3ed63036821fb2ddd1fb50a88013e316772c4d
 
     /**
      * Show the form for creating a new resource.
