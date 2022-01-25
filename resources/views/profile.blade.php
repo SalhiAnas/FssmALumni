@@ -34,7 +34,7 @@
                                     <h4>{{ $profile->first_name }} {{ $profile->last_name }}</h4>
                                     <p class="text-secondary mb-1">{{ $profile->status }}</p>
                                     <button class="btn btn-primary">Follow</button>
-                                    <button class="btn btn-outline-primary">Message</button>
+                                    <button class="btn btn-primary">Message</button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <a class="btn btn-info " onclick="toggle()">Edit</a>
+                                    <a class="btn btn-primary " onclick="toggle()">Edit</a>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <a class="btn btn-info " onclick="toggle1()">Add</a>
+                                            <a class="btn btn-primary " onclick="toggle1()">Add</a>
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <a class="btn btn-info" target="__blank" onclick="toggle2()" >Add</a>
+                                            <a class="btn btn-primary" target="__blank" onclick="toggle2()" >Add</a>
                                         </div>
                                     </div>
                                 </div>
@@ -207,7 +207,7 @@
       <input class="form-control" value = {{ $profile->cin }}>
     </div>
   </div>
-  <a class="btn btn-info" target="__blank" onclick="toggle()">Done</a>
+  <a class="btn btn-primary" target="__blank" onclick="toggle()">Done</a>
 </form>
 </div>
 <div id="popup2">
@@ -231,7 +231,7 @@
       <textarea rows="15" cols="40"></textarea>
     </div>
   </div>
-  <a class="btn btn-info" target="__blank" onclick="toggle1()">Done</a>
+  <a class="btn btn-primary" target="__blank" onclick="toggle1()">Done</a>
 </form>
 </div>
 <div id="popup3">
@@ -255,7 +255,7 @@
       <textarea rows="15" cols="40"></textarea>
     </div>
   </div>
-  <a class="btn btn-info" target="__blank" onclick="toggle2()">Done</a>
+  <a class="btn btn-primary" target="__blank" onclick="toggle2()">Done</a>
 </form>
 </div>
     <script type="text/javascript">

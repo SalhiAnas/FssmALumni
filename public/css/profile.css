@@ -77,3 +77,13 @@ body{
     opacity: 1;
     transition: 0.5s;
 }
+.btn{
+    background-color: #f05d23;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #f05d23;
+}
+.breadcrumb li a {
+    color: #f05d23;
+}
