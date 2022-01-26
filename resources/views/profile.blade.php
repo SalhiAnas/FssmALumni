@@ -178,7 +178,109 @@
 
         </div>
     </div>
+<<<<<<< Updated upstream
 
 
+=======
+    <div id="popup1">
+        <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
+    <form method="post" action="{{route('cursusstore')}}">
+    @csrf 
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">First Name:</label>
+    <div class="col-sm-8">
+      <input class="form-control" name="titre_cursus" value = {{ $user->first_name }}>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Last Name:</label>
+    <div class="col-sm-8">
+      <input class="form-control" name="description" value = {{ $user->last_name }}>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Phone:</label>
+    <div class="col-sm-8">
+      <input class="form-control" type="Number" name="année" value = {{ $user->phone }}>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">CIN:</label>
+    <div class="col-sm-8">
+      <input class="form-control" value = {{ $user->cin }}>
+    </div>
+  </div>
+  <input type="submit" value="donee" class="btn btn-primary" >
+</form>
+</div>
+<div id="popup2">
+        <h4 class="d-flex align-items-center mb-4">Academic Curriculum - Add</h4>
+    <form>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Title:</label>
+    <div class="col-sm-8">
+      <input class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Year</label>
+    <div class="col-sm-8">
+      <input type="Number" max="2022" min="1970" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Description:</label>
+    <div class="col-sm-8">
+      <textarea rows="15" cols="40"></textarea>
+    </div>
+  </div>
+  <a class="btn btn-primary" target="__blank" onclick="toggle1()">Done</a>
+</form>
+</div>
+<div id="popup3">
+        <h4 class="d-flex align-items-center mb-4">Professional Curriculum - Add</h4>
+    <form>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Title:</label>
+    <div class="col-sm-8">
+      <input class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Year</label>
+    <div class="col-sm-8">
+      <input type="Number" max="2022" min="1970" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Description:</label>
+    <div class="col-sm-8">
+      <textarea rows="15" cols="40"></textarea>
+    </div>
+  </div>
+  <a class="btn btn-primary" target="__blank" onclick="toggle2()">Done</a>
+</form>
+</div>
+    <script type="text/javascript">
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup1 = document.getElementById('popup1');
+            popup1.classList.toggle('active');
+        }
+        function toggle1() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup2 = document.getElementById('popup2');
+            popup2.classList.toggle('active');
+        }
+        function toggle2() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup3 = document.getElementById('popup3');
+            popup3.classList.toggle('active');
+        }
+    </script>
+>>>>>>> Stashed changes
 </html>
 @endsection
