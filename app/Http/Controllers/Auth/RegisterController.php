@@ -50,9 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:12', 'unique:users'],
+            'gender' => ['required', 'string', 'max:255'],
+            'status' => ['required', 'string', 'max:255'],
+            'date' => ['required', 'date'],
+            'cin' => ['required', 'string', 'max:8', 'unique:users'],
         ]);
     }
 
@@ -64,10 +68,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $user = User::create([
+                'first_name' => $data['first_name'],
+                'last_name' => $data['last_name'],
+                'phone' => $data['phone'],
+                'cin' => $data['cin'],
+                'date' => $data['date'],
+                'status' => $data['status'],
+                'gender' => $data['gender'],
         ]);
     }
+
+    public function update()
+    {
+        $data = \request()->validate([
+            'titre_cursus' => 'required',
+            'année' => ['required', 'int'],
+            'description' => ['required'],
+            ''
+        ]);
+        
+            
+        cursus::create([
+            'titre_cursus' => $data['titre_cursus'],
+            'année' => $data['année'],
+            'description' => $data['description'],
+            'type_cursus'=> "académique",
+                       
+        ]);
+        return redirect()->route('profile');
+    }
+
 }

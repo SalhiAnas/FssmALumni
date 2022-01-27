@@ -168,7 +168,7 @@
     </div>
     <div id="popup1">
         <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
-    <form>
+    <form action="{{route('home')}}" method="post">
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">First Name:</label>
     <div class="col-sm-8">
@@ -193,7 +193,7 @@
       <input class="form-control" value = {{ $user->cin }}>
     </div>
   </div>
-  <a class="btn btn-primary" target="__blank" onclick="toggle()">Done</a>
+  <input type="submit" value="done" class="btn btn-primary">
 </form>
 </div>
 <div id="popup2">
