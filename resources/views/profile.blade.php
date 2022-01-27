@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 </head>
-    <div class="container">
+    <div class="container" id="blur">
         <div class="main-body">
 
             <!-- Breadcrumb -->
@@ -32,11 +32,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
                                     <h4>{{$user->last_name}} {{ $user->first_name}}</h4>
-                                    <p class="text-secondary mb-1">Full Stack Developer</p>
-                                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                    <p class="text-secondary mb-1">{{ $user->status}}</p>
                                     @if($user->id != Auth()->user()->id)
                                     <button class="btn btn-primary">Follow</button>
-                                    <button class="btn btn-outline-primary">Message</button>
+                                    <button class="btn btn-primary">Message</button>
                                     @endif
                                 </div>
                             </div>
@@ -70,13 +69,13 @@
                 <div class="col-md-8">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h4 class="d-flex align-items-center mb-4"> Informations Generale</h4>
+                            <h4 class="d-flex align-items-center mb-4">General Information</h4>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                {{$user->last_name}} {{ $user->first_name}}
+                                    {{ $user->first_name }} {{ $user->last_name }}
                                 </div>
                             </div>
                             <hr>
@@ -85,7 +84,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    fip@jukmuh.al
+                                    {{ $user->email }}
                                 </div>
                             </div>
                             <hr>
@@ -94,43 +93,33 @@
                                     <h6 class="mb-0">Phone</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    (239) 816-9029
+                                    {{ $user->phone }}
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">CNE</h6>
+                                    <h6 class="mb-0">CIN</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    XX5698482
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Address</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    Bay Area, San Francisco, CA
+                                    {{ $user->cin }}
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
                                 @if($user->id == Auth()->user()->id)
-                                    <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                    <a class="btn btn-primary " onclick="toggle()">Edit</a>
                                 @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="row gutters-sm">
                         <div class="col-sm-6 mb-3">
                             <div class="card h-auto">
                                 <div class="card-body">
-                                    <h4 class="d-flex align-items-center mb-4"> Cursus academique.</h4>
+                                    <h4 class="d-flex align-items-center mb-4">Academic Curriculum</h4>
                                     <hr>
                                     
                                     @if(isset($cursus_aca))
@@ -144,7 +133,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                         @if($user->id == Auth()->user()->id)
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        <a class="btn btn-primary " onclick="toggle1()">Add</a>
                                         @endif
                                         </div>
                                     </div>
@@ -154,7 +143,7 @@
                         <div class="col-sm-6 mb-3">
                             <div class="card h-auto">
                                 <div class="card-body">
-                                    <h4 class="d-flex align-items-center mb-4"> Cursus professionelle. .</h4>
+                                    <h4 class="d-flex align-items-center mb-4">Professional Curriculum.</h4>
                                     <hr>
                                     @foreach($cursus_pro as $cursus)
                                     <div><small>{{$cursus->année}}</small> - <b>{{$cursus->titre_cursus}}</b> <h6 class="d-flex ml-3"></h6></div>
@@ -165,7 +154,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                         @if($user->id == Auth()->user()->id)
-                                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                        <a class="btn btn-primary " onclick="toggle2()">Add</a>
                                         @endif
                                         </div>
                                     </div>
@@ -175,33 +164,27 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-<<<<<<< Updated upstream
-
-
-=======
     <div id="popup1">
         <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
-    <form method="post" action="{{route('cursusstore')}}">
-    @csrf 
+    <form action="{{route('home')}}" method="post">
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">First Name:</label>
     <div class="col-sm-8">
-      <input class="form-control" name="titre_cursus" value = {{ $user->first_name }}>
+      <input class="form-control" value = {{ $user->first_name }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Last Name:</label>
     <div class="col-sm-8">
-      <input class="form-control" name="description" value = {{ $user->last_name }}>
+      <input class="form-control" value = {{ $user->last_name }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Phone:</label>
     <div class="col-sm-8">
-      <input class="form-control" type="Number" name="année" value = {{ $user->phone }}>
+      <input class="form-control" type="Number" value = {{ $user->phone }}>
     </div>
   </div>
   <div class="form-group row">
@@ -210,7 +193,7 @@
       <input class="form-control" value = {{ $user->cin }}>
     </div>
   </div>
-  <input type="submit" value="donee" class="btn btn-primary" >
+  <input type="submit" value="done" class="btn btn-primary">
 </form>
 </div>
 <div id="popup2">
@@ -281,6 +264,5 @@
             popup3.classList.toggle('active');
         }
     </script>
->>>>>>> Stashed changes
 </html>
 @endsection
