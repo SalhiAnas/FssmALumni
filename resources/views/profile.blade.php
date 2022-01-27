@@ -168,29 +168,30 @@
     </div>
     <div id="popup1">
         <h4 class="d-flex align-items-center mb-4">General Information - Edit</h4>
-    <form action="{{route('home')}}" method="post">
+    <form action="{{route('update_user')}}" method="post">
+    @csrf 
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">First Name:</label>
     <div class="col-sm-8">
-      <input class="form-control" value = {{ $user->first_name }}>
+      <input class="form-control" name="first_name" value = {{ $user->first_name }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Last Name:</label>
     <div class="col-sm-8">
-      <input class="form-control" value = {{ $user->last_name }}>
+      <input class="form-control" name="last_name" value = {{ $user->last_name }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Phone:</label>
     <div class="col-sm-8">
-      <input class="form-control" type="Number" value = {{ $user->phone }}>
+      <input class="form-control" type="Number" name="phone" value = {{ $user->phone }}>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">CIN:</label>
     <div class="col-sm-8">
-      <input class="form-control" value = {{ $user->cin }}>
+      <input class="form-control" name="cin" value = {{ $user->cin }}>
     </div>
   </div>
   <input type="submit" value="done" class="btn btn-primary">
@@ -198,50 +199,52 @@
 </div>
 <div id="popup2">
         <h4 class="d-flex align-items-center mb-4">Academic Curriculum - Add</h4>
-    <form>
+    <form method="post" action="{{ route('add_cursus',['type_cursus' => 'académique'])}} ">
+    @csrf 
   <div class="form-group row">
-    <label class="col-sm-4 col-form-label">Title:</label>
+  <label class="col-sm-4 col-form-label" >Title:</label>
     <div class="col-sm-8">
-      <input class="form-control">
+      <input class="form-control" name="titre_cursus">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-4 col-form-label">Year</label>
+    <label class="col-sm-4 col-form-label" >Year</label>
     <div class="col-sm-8">
-      <input type="Number" max="2022" min="1970" class="form-control">
+      <input type="Number" max="2022" min="1970" class="form-control" name="année">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-4 col-form-label">Description:</label>
+    <label class="col-sm-4 col-form-label" >Description:</label>
     <div class="col-sm-8">
-      <textarea rows="15" cols="40"></textarea>
+      <textarea rows="15" cols="40" name="description"></textarea>
     </div>
   </div>
-  <a class="btn btn-primary" target="__blank" onclick="toggle1()">Done</a>
+  <input type="submit" value="Done" class="btn btn-primary">
 </form>
 </div>
 <div id="popup3">
         <h4 class="d-flex align-items-center mb-4">Professional Curriculum - Add</h4>
-    <form>
-  <div class="form-group row">
-    <label class="col-sm-4 col-form-label">Title:</label>
+        <form method="post" action="{{ route('add_cursus',['type_cursus' => 'professionnel'])}}">
+        @csrf 
+        <div class="form-group row">
+    <label class="col-sm-4 col-form-label" >Title:</label>
     <div class="col-sm-8">
-      <input class="form-control">
+      <input class="form-control" name="titre_cursus">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-4 col-form-label">Year</label>
+    <label class="col-sm-4 col-form-label" >Year</label>
     <div class="col-sm-8">
-      <input type="Number" max="2022" min="1970" class="form-control">
+      <input type="Number" max="2022" min="1970" class="form-control" name="année">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-4 col-form-label">Description:</label>
+    <label class="col-sm-4 col-form-label" >Description:</label>
     <div class="col-sm-8">
-      <textarea rows="15" cols="40"></textarea>
+      <textarea rows="15" cols="40" name="description"></textarea>
     </div>
   </div>
-  <a class="btn btn-primary" target="__blank" onclick="toggle2()">Done</a>
+  <input type="submit" value="Done" class="btn btn-primary">
 </form>
 </div>
     <script type="text/javascript">

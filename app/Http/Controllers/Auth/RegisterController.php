@@ -81,24 +81,5 @@ class RegisterController extends Controller
         return $user;
     }
 
-    public function update()
-    {
-        $data = \request()->validate([
-            'titre_cursus' => 'required',
-            'année' => ['required', 'int'],
-            'description' => ['required'],
-            ''
-        ]);
-        
-            
-        cursus::create([
-            'titre_cursus' => $data['titre_cursus'],
-            'année' => $data['année'],
-            'description' => $data['description'],
-            'type_cursus'=> "académique",
-                       
-        ]);
-        return redirect()->route('profile');
-    }
 
 }

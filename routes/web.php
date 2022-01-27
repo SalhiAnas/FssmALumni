@@ -22,13 +22,15 @@ Route::get('/', function () {
 Auth::routes();
 
 
+
+Route::post('/profile/{type_cursus}/add_cursus', 'App\Http\Controllers\ProfileController@add_cursus')->name('add_cursus');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile/{id}', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profileAuth');
 
-Route::get('/cursus', [App\Http\Controllers\CursusController::class, 'create'])->name('cursuscreate');
+Route::post('/profile/update_user', [App\Http\Controllers\ProfileController::class, 'update_user'])->name('update_user');
 
-Route::post('/cursus/store', [App\Http\Controllers\CursusController::class, 'store'])->name('cursusstore');
 
